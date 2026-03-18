@@ -17,15 +17,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen(modifier: Modifier) {
+fun MenuScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.Blue)
             .padding(32.dp)
     ) {
+        Text(
+            text = "MENU",
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            color = Color.White
+        )
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -35,7 +43,7 @@ fun MenuScreen(modifier: Modifier) {
         ) {
 
             Button(
-                onClick = {/*TODO*/ },
+                onClick = {navController.navigate("perfil")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -50,7 +58,7 @@ fun MenuScreen(modifier: Modifier) {
             }
 
             Button(
-                onClick = {/*TODO*/ },
+                onClick = {navController.navigate("pedido")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -65,7 +73,7 @@ fun MenuScreen(modifier: Modifier) {
             }
 
             Button(
-                onClick = {/*TODO*/ },
+                onClick = {navController.navigate("login")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),

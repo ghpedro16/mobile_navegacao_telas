@@ -14,11 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen(modifier: Modifier) {
+fun LoginScreen(navController: NavController) {
     Box(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .background(color = Color.Red)
             .padding(32.dp)
@@ -31,11 +32,11 @@ fun LoginScreen(modifier: Modifier) {
         )
 
         Button(
-            onClick = {/*TODO*/},
+            onClick = {navController.navigate("menu")},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),
-            modifier = modifier.align(Alignment.Center)
+            modifier = Modifier.align(Alignment.Center)
         ) {
             Text(
                 text = "Entrar",

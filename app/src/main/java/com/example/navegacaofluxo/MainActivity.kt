@@ -28,15 +28,23 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = ""
+                        startDestination = "login"
                     ){
-                        composable (route = "login") { LoginScreen(modifier = Modifier) }
+                        composable (route = "login") { LoginScreen(
+                            navController = navController
+                        ) }
 
-                        composable (route = "menu") { MenuScreen(modifier = Modifier) }
+                        composable (route = "menu") { MenuScreen(
+                            navController = navController
+                        ) }
 
-                        composable (route = "pedido") { PedidoScreen(modifier = Modifier) }
+                        composable (route = "pedido") { PedidoScreen(
+                            navController = navController
+                        ) }
 
-                        composable (route = "perfil") { PerfilScreen(modifier = Modifier) }
+                        composable (route = "perfil") { PerfilScreen(
+                            navController = navController
+                        ) }
                     }
 
                 }
