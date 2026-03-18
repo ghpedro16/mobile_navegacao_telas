@@ -20,22 +20,22 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun PedidoScreen(navController: NavController) {
+fun PedidoScreen(navController: NavController, numeroPedido: String) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Green)
+            .background(color = Color.Gray)
             .padding(32.dp)
     ){
         Text(
-            text = "Perfil",
+            text = "Pedidos - $numeroPedido",
             color = Color.White,
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp
         )
 
         Button(
-            onClick = {navController.navigate("menu")},
+            onClick = {navController.popBackStack()},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),
